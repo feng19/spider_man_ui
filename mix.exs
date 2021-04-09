@@ -44,8 +44,7 @@ defmodule SpiderManUi.MixProject do
       {:circular_buffer, "~> 0.3.0"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      # {:spider_man, github: "feng19/spider_man"}
-      {:spider_man, path: "/Users/panwenfu/work/elixir/spider_man"}
+      {:spider_man, github: "feng19/spider_man"}
     ]
   end
 
