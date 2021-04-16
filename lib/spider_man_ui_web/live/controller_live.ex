@@ -52,7 +52,7 @@ defmodule SpiderManUiWeb.ControllerLive do
             <button phx-click="start" phx-value-id="<%= spider %>" class="btn btn-primary float-left">Start Spider</button>
           </div>
         </div>
-        <% :suspend -> %>
+        <% :suspended -> %>
         <div class="row">
           <div class="col col-md-auto">
             <button phx-click="continue" phx-value-id="<%= spider %>" class="btn btn-primary float-left">Continue Spider</button>
@@ -86,8 +86,8 @@ defmodule SpiderManUiWeb.ControllerLive do
       [
         start: fn -> {match?({:ok, _pid}, SpiderMan.start(spider)), :running} end,
         stop: fn -> {match?(:ok, SpiderMan.stop(spider)), :not_started} end,
-        suspend: fn -> {match?(:ok, SpiderMan.suspend(spider)), :suspend} end,
-        dump2file: fn -> {match?(:ok, SpiderMan.Engine.dump2file_force(spider)), :suspend} end,
+        suspend: fn -> {match?(:ok, SpiderMan.suspend(spider)), :suspended} end,
+        dump2file: fn -> {match?(:ok, SpiderMan.Engine.dump2file_force(spider)), :running} end,
         continue: fn -> {match?(:ok, SpiderMan.continue(spider)), :running} end
       ]
       |> Keyword.get(click_event)
@@ -120,5 +120,6 @@ defmodule SpiderManUiWeb.ControllerLive do
     |> Enum.filter(fn m ->
       Enum.any?(m.module_info(:attributes), &match?({:behaviour, [SpiderMan]}, &1))
     end)
+    |> List.delete(SpiderMan.CommonSpider)
   end
 end
