@@ -15,6 +15,20 @@ config :spider_man_ui, SpiderManUiWeb.Endpoint,
   pubsub_server: SpiderManUi.PubSub,
   live_view: [signing_salt: "S1RRWtUT"]
 
+# Livebook configuration
+config :livebook, LivebookWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "Lw7uycHu3bAv0sQE05mJm6q/ANjvtex9jHg1eTxUw+9dTRwPthb1gBGVxKZanXwU",
+  pubsub_server: Livebook.PubSub,
+  live_view: [signing_salt: "Mx2KO7mY"]
+
+config :livebook,
+  default_runtime: Livebook.Runtime.Embedded,
+  authentication_mode: :disabled,
+  token_authentication: false,
+  root_path: ".",
+  cookie: :spider_man_ui
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

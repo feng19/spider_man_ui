@@ -5,7 +5,7 @@ defmodule SpiderManUi.MixProject do
     [
       app: :spider_man_ui,
       version: "0.1.0",
-      elixir: "~> 1.7",
+      elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
@@ -44,6 +44,7 @@ defmodule SpiderManUi.MixProject do
       {:circular_buffer, "~> 0.3.0"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
+      {:livebook, "~> 0.1"},
       {:spider_man, github: "feng19/spider_man"}
     ]
   end
