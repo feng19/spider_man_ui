@@ -45,7 +45,7 @@ defmodule SpiderManUi.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:livebook, "~> 0.1"},
-      {:spider_man, github: "feng19/spider_man"}
+      {:spider_man, "~> 0.1"}
     ]
   end
 
