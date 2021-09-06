@@ -17,6 +17,9 @@ defmodule SpiderManUiWeb.Router do
     live_dashboard "/",
       metrics: SpiderManUiWeb.Telemetry,
       metrics_history: {SpiderManUiWeb.MetricsHistoryStorage, :metrics_history, []},
-      additional_pages: [spider_man_controller: SpiderManUiWeb.ControllerLive]
+      additional_pages: [
+        broadway: BroadwayDashboard,
+        spider_man_controller: SpiderManUiWeb.ControllerLive
+      ]
   end
 end

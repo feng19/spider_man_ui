@@ -7,7 +7,7 @@ defmodule SpiderManUiWeb.ControllerLive do
     not_started_spiders = find_all_spider(spiders)
 
     spiders =
-      Enum.map(spiders, &{&1, SpiderMan.Engine.status(&1)}) ++
+      Enum.map(spiders, &{&1, SpiderMan.status(&1)}) ++
         Enum.map(not_started_spiders, &{&1, :not_started})
 
     {:ok, assign(socket, spiders: spiders)}
