@@ -47,7 +47,7 @@ defmodule SpiderManUi.MixProject do
       {:livebook, "~> 0.1"},
       {:spider_man, "~> 0.4"},
       {:logger_file_backend, "~> 0.0.11"},
-      {:broadway_dashboard, "~> 0.1"}
+      {:broadway_dashboard, "~> 0.2"}
     ]
   end
 
